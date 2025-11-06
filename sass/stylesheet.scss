@@ -191,6 +191,26 @@
 @import "components/404";
 
 /*------------------------------------*
+	$DASHBOARD
+*------------------------------------*/
+@import "components/dashboard";
+
+/*------------------------------------*
+	$NOTIFICATIONS
+*------------------------------------*/
+@import "components/notifications";
+
+/*------------------------------------*
+	$EMPLOYEE DIRECTORY
+*------------------------------------*/
+@import "components/employee-directory";
+
+/*------------------------------------*
+	$DARK MODE
+*------------------------------------*/
+@import "components/dark-mode";
+
+/*------------------------------------*
 	$GENERAL
 *------------------------------------*/
 @import "components/plugins/general";

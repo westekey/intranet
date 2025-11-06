@@ -206,6 +206,10 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'third/class-amp.php';
 		require_once $dir . 'third/class-pwa.php';
 
+		// Intranet Modern Features.
+		require_once $dir . 'intranet-features.php';
+		require_once $dir . 'intranet-notifications.php';
+
 		// WooCommerce.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 			require_once $dir . 'woocommerce/woocommerce-config.php';
