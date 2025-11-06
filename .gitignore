@@ -1,0 +1,10 @@
+# Ignorer les fichiers système et caches
+*.log
+*.tmp
+*.zip
+*.tar
+*.tar.gz
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
