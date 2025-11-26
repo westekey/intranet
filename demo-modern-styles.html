@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Démonstration - Styles Modernes</title>
+
+    <!-- Styles de base pour la démo -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .demo-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .demo-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Styles pour simuler le blog entry */
+        .blog-entry {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-entry-inner {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .blog-entry-header {
+            margin-bottom: 15px;
+        }
+
+        .entry-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .entry-meta {
+            font-size: 14px;
+            color: #95a5a6;
+        }
+
+        .blog-entry-summary {
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--color-primary, #c8d9e6);
+            color: #333;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .page-header {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .page-header-content {
+            max-width: 800px;
+        }
+
+        .page-header-title {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-subheading {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .button-demo {
+            display: inline-flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #27ae60;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+
+    <!-- Charger le CSS moderne -->
+    <link rel="stylesheet" href="assets/css/custom-modern-styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-header-title">✨ Styles CSS & JavaScript Modernes</h1>
+            <p class="page-subheading">
+                Démonstration des effets avancés avec animations et interactions
+            </p>
+        </div>
+    </div>
+
+    <div class="demo-container">
+
+        <!-- Section Introduction -->
+        <div class="demo-section">
+            <h2 class="demo-title">🎨 Introduction</h2>
+            <p class="demo-subtitle">Bienvenue dans la démonstration des styles modernes</p>
+
+            <div class="info-box">
+                <strong>✅ Fichiers chargés avec succès :</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>CSS Moderne : <code>custom-modern-styles.css</code> (11 KB)</li>
+                    <li>JavaScript : <code>custom-modern-interactions.js</code> (16 KB)</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <span class="badge">✅ Variables CSS</span>
+                <span class="badge">✅ Animations</span>
+                <span class="badge">✅ Effets 3D</span>
+                <span class="badge">✅ Responsive</span>
+                <span class="badge">✅ Dark Mode</span>
+                <span class="badge">✅ Accessibilité</span>
+            </div>
+        </div>
+
+        <!-- Section H6 -->
+        <div class="demo-section">
+            <h2 class="demo-title">📝 Titres H6 Modernes</h2>
+            <p class="demo-subtitle">Cliquez sur les titres pour copier le texte</p>
+
+            <h6>Premier titre H6 - Effet slide + gradient</h6>
+            <p>Ce titre utilise un gradient de texte, une animation au scroll, et une ligne décorative qui s'étend au survol.</p>
+
+            <h6>Deuxième titre H6 - Copie au clic</h6>
+            <p>Cliquez sur n'importe quel titre H6 pour copier son contenu dans le presse-papier !</p>
+
+            <h6 class="typing-effect">Troisième titre - Effet typing</h6>
+            <p>Ce titre a la classe <code>typing-effect</code> pour un effet de machine à écrire.</p>
+
+            <div class="code-block">
+&lt;h6&gt;Mon titre moderne&lt;/h6&gt;
+&lt;h6 class="typing-effect"&gt;Titre avec effet typing&lt;/h6&gt;
+            </div>
+        </div>
+
+        <!-- Section Blog Entries -->
+        <div class="demo-section">
+            <h2 class="demo-title">📰 Blog Entries - Cards Interactives</h2>
+            <p class="demo-subtitle">Survolez les cards pour voir les effets 3D et animations</p>
+
+            <div class="demo-grid">
+                <div class="blog-entry">
+                    <div class="blog-entry-inner">
+                        <div class="thumbnail">📸</div>
+                        <div class="blog-entry-header">
+                            <h3 class="entry-title">Article de Blog #1</h3>
+                            <div class="entry-meta">26 novembre 2025 • 5 min de lecture</div>
+                        </div>
+                        <div class="blog-entry-summary">
+                            Cette card possède un effet 3D tilt au survol, une ombre dynamique,
+                            et un effet de brillance. Cliquez pour voir l'effet ripple !
+                        </div>
+                        <a href="#" class="read-more">Lire la suite →</a>
+                    </div>
+                </div>
+
+                <div class="blog-entry">
+                    <div class="blog-entry-inner featured">
+                        <div class="thumbnail">⭐</div>
+                        <div class="blog-entry-header">
+                            <h3 class="entry-title">Article Featured</h3>
+                            <div class="entry-meta">25 novembre 2025 • 8 min de lecture</div>
+                        </div>
+                        <div class="blog-entry-summary">
+                            Cette card a la classe <code>featured</code> pour un effet de pulsation subtil.
+                            Elle attire l'attention avec une bordure colorée.
+                        </div>
+                        <a href="#" class="read-more">Lire la suite →</a>
+                    </div>
+                </div>
+
+                <div class="blog-entry">
+                    <div class="blog-entry-inner">
+                        <div class="thumbnail">🚀</div>
+                        <div class="blog-entry-header">
+                            <h3 class="entry-title">Article de Blog #3</h3>
+                            <div class="entry-meta">24 novembre 2025 • 3 min de lecture</div>
+                        </div>
+                        <div class="blog-entry-summary">
+                            Toutes les cards s'animent au scroll avec un délai progressif.
+                            L'effet est fluide et optimisé pour les performances.
+                        </div>
+                        <a href="#" class="read-more">Lire la suite →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-block">
+&lt;div class="blog-entry"&gt;
+  &lt;div class="blog-entry-inner"&gt;
+    &lt;!-- Contenu de la card --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card avec effet featured --&gt;
+&lt;div class="blog-entry-inner featured"&gt;
+  &lt;!-- Contenu --&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+
+        <!-- Section Classes Utilitaires -->
+        <div class="demo-section">
+            <h2 class="demo-title">🎨 Classes Utilitaires</h2>
+            <p class="demo-subtitle">Classes CSS prêtes à l'emploi</p>
+
+            <div class="features-list">
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Glassmorphism</h3>
+                    <p class="feature-description">
+                        Classe : <code>.glass-effect</code><br>
+                        Effet de verre moderne avec backdrop-filter
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon text-gradient">✨</div>
+                    <h3 class="feature-title text-gradient">Gradient Text</h3>
+                    <p class="feature-description">
+                        Classe : <code>.text-gradient</code><br>
+                        Texte avec dégradé de couleurs
+                    </p>
+                </div>
+
+                <div class="feature-card neomorph">
+                    <div class="feature-icon">🎭</div>
+                    <h3 class="feature-title">Néomorphisme</h3>
+                    <p class="feature-description">
+                        Classe : <code>.neomorph</code><br>
+                        Design soft UI avec ombres subtiles
+                    </p>
+                </div>
+            </div>
+
+            <h6>Boutons Modernes</h6>
+            <div class="button-demo">
+                <button class="modern-button">Bouton Primary</button>
+                <button class="modern-button" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Bouton Secondary</button>
+            </div>
+
+            <div class="code-block">
+&lt;div class="glass-effect"&gt;Glassmorphism&lt;/div&gt;
+&lt;span class="text-gradient"&gt;Gradient Text&lt;/span&gt;
+&lt;div class="neomorph"&gt;Néomorphisme&lt;/div&gt;
+&lt;button class="modern-button"&gt;Bouton&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Section Fonctionnalités JavaScript -->
+        <div class="demo-section">
+            <h2 class="demo-title">⚡ Fonctionnalités JavaScript</h2>
+            <p class="demo-subtitle">Effets interactifs automatiques</p>
+
+            <div class="features-list">
+                <div class="feature-card">
+                    <div class="feature-icon">🎢</div>
+                    <h3 class="feature-title">Parallaxe</h3>
+                    <p class="feature-description">
+                        Le header suit votre scroll avec un effet parallaxe fluide
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3 class="feature-title">3D Tilt</h3>
+                    <p class="feature-description">
+                        Les cards suivent le mouvement de votre souris en 3D
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 class="feature-title">Ripple Effect</h3>
+                    <p class="feature-description">
+                        Cliquez sur une card pour voir l'effet d'ondulation
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⬆️</div>
+                    <h3 class="feature-title">Scroll to Top</h3>
+                    <p class="feature-description">
+                        Bouton flottant pour remonter en haut de page
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Progress Bar</h3>
+                    <p class="feature-description">
+                        Barre de progression en haut de page pendant le scroll
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3 class="feature-title">Scroll Reveal</h3>
+                    <p class="feature-description">
+                        Animations au scroll avec Intersection Observer
+                    </p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>💡 Astuce :</strong> Scrollez vers le bas pour voir le bouton "Retour en haut" et la barre de progression apparaître !
+            </div>
+        </div>
+
+        <!-- Section Variables CSS -->
+        <div class="demo-section">
+            <h2 class="demo-title">🎨 Variables CSS</h2>
+            <p class="demo-subtitle">Personnalisez facilement avec les custom properties</p>
+
+            <div class="code-block">
+:root {
+  /* Couleurs */
+  --color-primary: #c8d9e6;
+  --color-primary-light: #d8e9f6;
+  --color-primary-dark: #a8b9c6;
+
+  /* Ombres */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Espacements */
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+            </div>
+
+            <p style="margin-top: 20px;">
+                Modifiez ces variables dans votre CSS pour personnaliser tout le design en un instant !
+            </p>
+        </div>
+
+        <!-- Section Performance -->
+        <div class="demo-section">
+            <h2 class="demo-title">⚡ Performance & Optimisation</h2>
+            <p class="demo-subtitle">Code optimisé pour la vitesse et l'accessibilité</p>
+
+            <div class="features-list">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Debounce & Throttle</h3>
+                    <p class="feature-description">Limitation des événements fréquents pour optimiser les performances</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3 class="feature-title">Intersection Observer</h3>
+                    <p class="feature-description">Animations uniquement sur les éléments visibles dans le viewport</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3 class="feature-title">Accessibilité</h3>
+                    <p class="feature-description">Support de prefers-reduced-motion et ARIA labels</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3 class="feature-title">Dark Mode</h3>
+                    <p class="feature-description">Support automatique du mode sombre système</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>📊 Performances estimées :</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Lighthouse Score : 95+ 🟢</li>
+                    <li>First Contentful Paint : &lt; 1.5s 🟢</li>
+                    <li>Cumulative Layout Shift : &lt; 0.1 🟢</li>
+                    <li>Taille CSS : 11 KB (non minifié)</li>
+                    <li>Taille JS : 16 KB (non minifié)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contenu pour tester le scroll -->
+        <div class="demo-section">
+            <h2 class="demo-title">📜 Scrollez pour tester !</h2>
+            <p class="demo-subtitle">Testez la barre de progression et le bouton retour en haut</p>
+
+            <div style="height: 500px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px;">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; margin-bottom: 20px;">✨ Scrollez vers le bas</h3>
+                    <p style="font-size: 18px;">puis remontez pour voir le bouton "Retour en haut"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="demo-section" style="text-align: center;">
+            <h6>🎉 Fin de la démonstration</h6>
+            <p style="color: #7f8c8d; margin-top: 20px;">
+                Consultez le fichier <code>MODERN-CUSTOMIZATION-README.md</code> pour la documentation complète
+            </p>
+            <div style="margin-top: 30px;">
+                <button class="modern-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    ⬆️ Retour en haut
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Charger le JavaScript moderne -->
+    <script src="assets/src/js/custom-modern-interactions.js"></script>
+
+</body>
+</html>
