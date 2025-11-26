@@ -8,3 +8,13 @@
 Thumbs.db
 node_modules/
 vendor/
+
+# Docker et environnement de développement
+.env
+docker-compose.override.yml
+
+# Fichiers WordPress (si générés)
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
